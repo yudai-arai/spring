@@ -2,7 +2,7 @@ package demo.trySpring.chapter4;
 
 public class Main {
     public static void main(String[] args) {
-        Engine engine = new HondaEngine();
+        Engine engine = new NissanEngine();
 
         Car car =new Car(engine);
 

@@ -5,10 +5,12 @@ public class HondaEngine implements Engine {
         super();
     }
 
+    @Override
     public void boot() {
         System.out.println("ホンダエンジン起動");
     }
 
+    @Override
     public void stop() {
         System.out.println("ホンダエンジン停止");
     }
