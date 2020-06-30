@@ -9,7 +9,7 @@ import java.util.Map;
 @Repository
 public class HelloRepository {
     @Autowired
-    private JdbcTemplate JdbcTemplate;
+    private JdbcTemplate jdbcTemplate;
 
     public Map<String, Object> findOne(int id) {
         String query = "SELECT"
