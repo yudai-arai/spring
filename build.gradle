@@ -22,6 +22,7 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok:1.18.10'
 	compile("org.webjars:jquery:2.1.4")
 	compile("org.webjars:bootstrap:3.3.5")
+	runtimeOnly 'com.h2database:h2'
 }
 
 test {
