@@ -1,4 +1,4 @@
-package demo.domain.model;
+package demo.login.domain.model;
 
 import javax.validation.GroupSequence;
 

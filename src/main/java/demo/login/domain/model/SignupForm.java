@@ -1,4 +1,4 @@
-package demo.domain.model;
+package demo.login.domain.model;
 
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;

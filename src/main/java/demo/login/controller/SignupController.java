@@ -1,7 +1,7 @@
 package demo.login.controller;
 
-import demo.domain.model.GroupOrder;
-import demo.domain.model.SignupForm;
+import demo.login.domain.model.GroupOrder;
+import demo.login.domain.model.SignupForm;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
