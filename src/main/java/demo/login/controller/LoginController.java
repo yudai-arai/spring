@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-public class loginController {
+public class LoginController {
     @GetMapping("/login")
     public String getLogin(Model model) {
         return "login/login";
@@ -14,6 +14,6 @@ public class loginController {
 
     @PostMapping("/login")
     public String postLogin(Model model) {
-        return "login/login";
+        return "redirect:/home";
     }
 }
