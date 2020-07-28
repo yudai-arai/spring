@@ -18,7 +18,7 @@ import java.util.Map;
 @Controller
 public class HomeController {
     @Autowired
-    UserService userServise;
+    UserService userService;
 
     private Map<String, String> radioMarriage;
 
@@ -40,11 +40,11 @@ public class HomeController {
     public String getUserList(Model model) {
         model.addAttribute("contents", "login/userList :: userList_contents");
 
-        List<User> userList = userServise.selectMany();
+        List<User> userList = userService.selectMany();
 
         model.addAttribute("userList", userList);
 
-        int count = userServise.count();
+        int count = userService.count();
         model.addAttribute("userListCount", count);
 
         return "login/homeLayout";
@@ -60,7 +60,7 @@ public class HomeController {
         model.addAttribute("radioMarriage", radioMarriage);
 
         if (userId != null && userId.length() > 0) {
-            User user = userServise.selectOne(userId);
+            User user = userService.selectOne(userId);
 
             form.setUserId(user.getUserId());
             form.setUserName(user.getUserName());
@@ -87,7 +87,7 @@ public class HomeController {
         user.setAge(form.getAge());
         user.setMarriage(form.isMarriage());
 
-        boolean result = userServise.updateOne(user);
+        boolean result = userService.updateOne(user);
 
         if (result == true) {
             model.addAttribute("result", "更新成功");
@@ -100,7 +100,7 @@ public class HomeController {
     @PostMapping(value = "/userDetail", params = "delete")
     public String postUserDetailDelete(@ModelAttribute SignupForm form, Model model) {
         System.out.println("削除ボタンの処理");
-        boolean result = userServise.deleteOne(form.getUserId());
+        boolean result = userService.deleteOne(form.getUserId());
 
         if (result == true) {
             model.addAttribute("result", "削除成功");
