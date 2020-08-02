@@ -4,6 +4,9 @@ import demo.login.domain.model.SignupForm;
 import demo.login.domain.model.User;
 import demo.login.domain.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -116,7 +120,21 @@ public class HomeController {
     }
 
     @GetMapping("/userList/csv")
-    public String getUserListCsv(Model model) {
-        return getUserList(model);
+    public ResponseEntity<byte[]> getUserListCsv(Model model) {
+        userService.userCsvOut();
+
+        byte[] bytes = null;
+
+        try {
+            bytes = userService.getFile("sample.csv");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Type", "text/csv; charset=UTF-8");
+        headers.setContentDispositionFormData("filename", "sample.csv");
+
+        return new ResponseEntity<>(bytes, headers, HttpStatus.OK);
     }
 }
