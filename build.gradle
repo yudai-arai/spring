@@ -24,6 +24,8 @@ dependencies {
 	compile("org.webjars:bootstrap:3.3.5")
 	runtimeOnly 'com.h2database:h2'
 	compile('org.springframework.boot:spring-boot-starter-aop')
+	compile('org.springframework.boot:spring-boot-starter-security')
+	compile('org.thymeleaf.extras:thymeleaf-extras-springsecurity5')
 }
 
 test {
