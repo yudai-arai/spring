@@ -1,8 +1,13 @@
-INSERT INTO employee (employee_id, employee_name, age)
-VALUES(1, '山田太郎', 30);
+INSERT INTO inquiry(name, email, contents, created)
+VALUES('Ethan', 'sample@example.com', 'Hello', '2019-11-12 08:34:19');
+INSERT INTO inquiry(name, email, contents, created)
+VALUES('Emma', 'sample2@example.com', 'GoodMorning', '2019-12-18 12:10:52');
+INSERT INTO inquiry(name, email, contents, created)
+VALUES('William', 'sample3@example.com', 'GoodEvening', '2019-12-18 15:10:52');
 
-INSERT INTO m_user (user_id, password, user_name, birthday, age, marriage, role)
-VALUES('yamada@xxx.co.jp', '$2a$10$xRTXvpMWly0oGiu65WZlm.3YL95LGVV2ASFjDhe6WF4.Qji1huIPa', '山田太郎', '1990-01-01', 28, false, 'ROLE_ADMIN');
-
-INSERT INTO m_user (user_id, password, user_name, birthday, age, marriage, role)
-VALUES('tamura@xxx.co.jp', '$2a$10$xRTXvpMWly0oGiu65WZlm.3YL95LGVV2ASFjDhe6WF4.Qji1huIPa', '田村達也', '1986-11-05', 31, false, 'ROLE_GENERAL');
+INSERT INTO survey(age, satisfaction, comment, created)
+VALUES(23, 5, 'Good!', '2019-01-03 11:02:35');
+INSERT INTO survey(age, satisfaction, comment, created)
+VALUES(47, 4, 'Excellent', '2019-02-18 22:35:54');
+INSERT INTO survey(age, satisfaction, comment, created)
+VALUES(47, 4, 'Excellent', '2019-02-18 22:35:54');

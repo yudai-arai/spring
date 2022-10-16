@@ -1,15 +1,19 @@
-CREATE TABLE IF NOT EXISTS employee (
- employee_id INT PRIMARY KEY,
- employee_name VARCHAR(50),
- age INT
+CREATE TABLE inquiry
+(
+   id INT NOT NULL AUTO_INCREMENT,
+   name VARCHAR(100) NOT NULL,
+   email VARCHAR(100) NOT NULL,
+   contents VARCHAR(500) NOT NULL,
+   created DATETIME NOT NULL,
+   PRIMARY KEY(id)
 );
 
-CREATE TABLE IF NOT EXISTS m_user (
- user_id VARCHAR(50) PRIMARY KEY,
- password VARCHAR(100),
- user_name VARCHAR(50),
- birthday DATE,
- age INT,
- marriage BOOLEAN,
- role VARCHAR(50)
+CREATE TABLE survey
+(
+   id INT NOT NULL AUTO_INCREMENT,
+   age INT NOT NULL,
+   satisfaction INT NOT NULL,
+   comment VARCHAR(100),
+   created DATETIME NOT NULL,
+   PRIMARY KEY(id)
 );
