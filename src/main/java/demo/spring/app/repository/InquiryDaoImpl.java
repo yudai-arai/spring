@@ -21,7 +21,27 @@ public class InquiryDaoImpl implements InquiryDao{
 
 	@Override
 	public void insertInquiry(Inquiry inquiry) {
-		//hands-on	
+		PreparedStatement pStmt = null;
+		int result = 0;
+		try {
+			pStmt = con.prepareStatement(“INSERT INTO ～");
+					pStmt.setString(1, inquiry.getName());
+			pStmt.setInt(2, inquiry.getEmail());
+			pStmt.setInt(3, inquiry.getContents());
+			pStmt.setTimestamp(4, inquiry.getId());
+			result = pStmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pStmt != null) {
+					pStmt.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
 	}
 	
 //  This method is used in the latter chapter

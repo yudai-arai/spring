@@ -1,0 +1,13 @@
+.row {
+  width: 1000px;
+  padding: 10px 15px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin: 30px auto;
+}
+
+.item-image {
+  width: 320px;
+  height: 160px;
+}

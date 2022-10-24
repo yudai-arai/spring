@@ -62,9 +62,13 @@ public class InquiryController {
 			return "inquiry/form";
 		}
 
-		redirectAttribute.addFlashAttribute("complete", "Registerd!");
-		//redirect
-
+		Inquiry inquiry = new Inquiry();
+		inquiry.setName(inquiryForm.getName());
+		inquiry.setEmail(inquiryForm.getEmail());
+		inquiry.setContents(inquiryForm.getContents());
+		inquiry.setCreated(LocalDateTime.now());
+		inquiryService.save(inquiry);
+		redirectAttributes.addFlashAttribute("complete", "Completed!");
 		return "redirect:/inquiry/form";
 	}
 

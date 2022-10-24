@@ -18,7 +18,7 @@ public class InquiryServiceImpl implements InquiryService {
 
 	@Override
 	public void save(Inquiry inquiry) {
-		//hands-on
+		dao.insertInquiry(inquiry);
 	}
 
 //  This method is used in the latter chapter
@@ -34,8 +34,6 @@ public class InquiryServiceImpl implements InquiryService {
 	@Override
 	public List<Inquiry> getAll() {
 
-		//hands-on
-
-		return null;
+		return dao.getAll();
 	}
 }
