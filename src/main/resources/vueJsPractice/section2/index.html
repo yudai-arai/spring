@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.11/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{ message }}</p>
+    <p>{{ number + 5 }}</p>
+    <p>{{ ok ? 'YES' : 'NO' }}</p>
+    <p>{{ sayHi() }}</p>
+    <a v-text="message"></a>
+    <div>{{ html }}</div>
+    <div v-html="html"></div>
+    <a :[attribute]="url">Google</a>
+    <a v-bind="twitterObject">Twitter</a>
+    <p>
+        現在{{ number }}回クリックされています
+    </p>
+    <button v-on:click="countUp">
+        カウントアップ
+    </button>
+    <p v-on:mousemove="changeMousePosition">
+        マウスを載せてください
+        <span v-on:mousemove.stop.prevent>反応しないでください</span>
+    </p>
+    <p v-on:click.prevent.stop="noEvent" href="https://google.com">
+        Google
+    </p>
+    <p>
+        X: {{x}}, Y: {{y}}
+    </p>
+</div>
+</body>
+</html>
